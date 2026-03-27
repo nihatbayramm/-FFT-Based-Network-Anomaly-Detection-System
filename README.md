@@ -1,51 +1,58 @@
-# 🛡️ FFT Anomali Tespit Sistemi-v4.0
+# 🛡️ FFT Anomaly Detection System - v4.0
 
-FFT, ağ trafiğindeki şüpheli hareketleri ve DDoS saldırılarını **Hızlı Fourier Dönüşümü (FFT)** kullanarak saptayan gelişmiş bir siber güvenlik analiz aracıdır.  
-Klasik imza tabanlı sistemlerin aksine, trafiğin ritmini ve frekans spektrumunu analiz ederek anomali tespiti yapar.
+FFT is an advanced cybersecurity analysis tool that detects suspicious activity and DDoS attacks in network traffic using the **Fast Fourier Transform (FFT)**.
 
----
-
-## 🚀 Temel Özellikler
-
-- **Spektral Analiz:**  
-  Ağ paketlerini zaman domaininden frekans domainine aktararak periyodik saldırı imzalarını yakalar.
-
-- **Gerçek Zamanlı Görselleştirme:**  
-  Paket yoğunluğu ve FFT spektrumunu eş zamanlı grafikler halinde sunar.
-
-- **Gelişmiş Anomali Motoru:**  
-  Saniyeler içindeki paket değişimlerini istatistiksel olarak hesaplar ve bir **"Anomali Skoru"** üretir.
-
-- **Siber Güvenlik Dashboard:**  
-  Profesyonel *Dark Mode* arayüzü ve terminal tabanlı raporlama sistemi.
-
-- **Hızlı PCAP İşleme:**  
-  Scapy `PcapReader` mimarisi ile binlerce paketi bilgisayarı kasmadan saniyeler içinde analiz eder.
+Unlike classic signature-based systems, it detects anomalies by analyzing the rhythm and frequency spectrum of traffic.
 
 ---
 
-## 🛠️ Teknik Altyapı
+## 🚀 Key Features
 
-Sistem, ağ trafiğini bir **sinyal** olarak ele alır.
+- **Spectral Analysis:**
 
-- Rastgele insan trafiği → *White Noise* (beyaz gürültü)
-- Botlar / flood araçları → Sabit frekansta tekrar eden sinyaller
+Captures periodic attack signatures by transferring network packets from the time domain to the frequency domain.
 
-Bu fark sayesinde sistem, saldırıları frekans bazlı yakalar.
+- **Real-Time Visualization:**
 
-### Kullanılan Teknolojiler
+Presents packet density and FFT spectrum in real-time graphs.
+
+- **Advanced Anomaly Engine:**
+
+Calculates packet changes within seconds statistically and generates an **"Anomaly Score"**.
+
+- **Cybersecurity Dashboard:**
+
+Professional *Dark Mode* interface and terminal-based reporting system.
+
+- **Fast PCAP Processing:**
+
+Scapy analyzes thousands of packets in seconds without slowing down the computer, thanks to its `PcapReader` architecture.
+
+---
+
+## 🛠️ Technical Infrastructure
+
+The system treats network traffic as a **signal**.
+
+- Random human traffic → *White Noise*
+
+- Bots / flood tools → Repeating signals at a fixed frequency
+
+Thanks to this difference, the system detects attacks based on frequency.
+
+### Technologies Used
 
 - Python 3.12+
-- Scapy → Paket ayrıştırma ve PCAP okuma
-- NumPy & SciPy → FFT ve istatistiksel analiz
-- Matplotlib → Grafik çizimi
-- Tkinter → Arayüz ve threading desteği
+- Scapy → Packet parsing and PCAP reading
+- NumPy & SciPy → FFT and statistical analysis
+- Matplotlib → Graph plotting
+- Tkinter → Interface and threading support
 
 ---
 
-## 💻 Kurulum ve Çalıştırma
+## 💻 Installation and Running
 
-### 1️⃣ Gerekli Kütüphaneler
+### 1️⃣ Required Libraries
 
 ```
 
@@ -53,35 +60,36 @@ pip install scapy numpy scipy matplotlib
 
 ```
 
-### 2️⃣ Sistemi Başlat
+### 2️⃣ Start the System
 
 ```
-python3 ana_program.py
+python3 main_program.py
 
 ```
 
-### 🧪 Test Verisi Oluşturma (Opsiyonel)
+### 🧪 Generating Test Data (Optional)
 
-15 saniyelik saldırı trafiği simülasyonu:
+15-second attack traffic simulation:
 
 ```
+
 sudo hping3 -S -p 80 --flood 127.0.0.1
 
 ```
 
-### 📊 Analiz Çıktıları
+### 📊 Analysis Outputs
 
-**📈 Zaman Serisi**
+**📈 Time Series**
 
-**Trafiğin saniye saniye yoğunluğu**
+**Traffic intensity second by second**
 
-**⚡ FFT Spektrumu**
+**⚡ FFT Spectrum**
 
-**Belirli frekansta keskin spike (tepe) varsa → büyük ihtimal saldırı**
+**If there is a sharp spike at a specific frequency → most likely an attack**
 
-**Düz dağılım → normal trafik**
+**Flat distribution → normal traffic**
 
-***Bu proje eğitim ve siber güvenlik araştırma amaçlı geliştirilmiştir.***
+***This project was developed for educational and cybersecurity research purposes.***
 
 <img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/a0f854b7-f9a9-441d-b9a4-39f9cfb0bfee" />
 
@@ -89,9 +97,8 @@ sudo hping3 -S -p 80 --flood 127.0.0.1
 
 <img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/241348db-7a98-49e3-ae16-fc60c8ca8d67" />
 
-
-### 👨‍💻 Geliştirici
+### 👨‍💻 Developer
 
 ***Nihat Bayram***
 
-**Sürüm: 4.0 (Stable)**
+**Version: 4.0 (Stable)**
